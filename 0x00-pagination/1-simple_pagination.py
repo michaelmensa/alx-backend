@@ -47,7 +47,8 @@ class Server:
     def index_range(self, page: int, page_size: int) -> Tuple:
         '''
         function that returns a tuple of size two containing a start index
-        and an end index corresponding to the ranges of indexes to return a list
+        and an end index corresponding to the ranges of indexes to return a
+        list
         for those particular pagination params.
         '''
         start_index = (page - 1) * page_size
