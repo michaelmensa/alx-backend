@@ -15,15 +15,15 @@ class FIFOCache(BaseCaching):
 
     def put(self, key, item):
         ''' method to add key, item to cached data '''
-        if key is not None or item is not None:
+        if key is None or item is None:
+            pass
+        else:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS \
                     and key not in self.cache_data.keys():
                 first = next(iter(self.cache_data.keys()))
                 del self.cache_data[first]
                 print(f'DISCARD: {first}')
             self.cache_data[key] = item
-        else:
-            pass
 
     def get(self, key):
         ''' retrieve item linked to key in self.cache_data '''
