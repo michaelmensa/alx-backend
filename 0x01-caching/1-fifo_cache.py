@@ -22,6 +22,8 @@ class FIFOCache(BaseCaching):
                 del self.cache_data[first]
                 print(f'DISCARD: {first}')
             self.cache_data[key] = item
+        else:
+            pass
 
     def get(self, key):
         ''' retrieve item linked to key in self.cache_data '''
