@@ -8,8 +8,8 @@ from flask import FlaskI, render_template
 app = Flask(__name__)
 
 
-@app.routes('/')
-def index():
+@app.route('/')
+def index() -> None:
     ''' index route '''
     return render_template('0-index.html')
 
