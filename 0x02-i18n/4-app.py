@@ -2,7 +2,7 @@
 '''
 Module 3-app.py
 '''
-from flask_babel import Babel 
+from flask_babel import Babel
 from flask import Flask, render_template, request
 
 
@@ -30,9 +30,6 @@ def get_locale():
     if requested_locale and requested_locale in app.config['LANGUAGES']:
         return requested_locale
     return request.accept_languages.best_match(app.config['LANGUAGES'])
-
-
-#babel = Babel(app, locale_selector=get_locale)
 
 
 @app.route('/')
